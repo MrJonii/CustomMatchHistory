@@ -1,0 +1,67 @@
+.team-playerContainer {
+    display: flex;
+    margin: 20px
+}
+
+.team-resultText {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.team-resultText-victory {
+    color: #5383E8;
+}
+
+.team-resultText-defeat {
+    color: #E84057;
+}
+
+.team-detailed-playerContainer {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+}
+
+.team-detailed-header {
+    display: flex;
+    margin: 8px 0;
+}
+
+.team-detailed-teamStats {
+    display: flex;
+    justify-content: center;
+    margin: 16px 0
+}
+
+.bansContainer {
+    display: flex;
+    align-items: center;
+    background-color: #202020;
+    border-radius: 10px;
+    width: 270px;
+}
+
+.bansContainer p {
+    text-align: center;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.goldContainer {
+    display: flex;
+    align-items: center;
+    background-color: #202020;
+    border-radius: 10px;
+    width: 100px;
+}
+
+.killsContainer {
+    display: flex;
+    align-items: center;
+    background-color: #202020;
+    border-radius: 10px;
+    width: 70px;
+    margin: 0 10px;
+}

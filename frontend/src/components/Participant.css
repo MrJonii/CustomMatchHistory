@@ -1,0 +1,39 @@
+.participant-shared {
+    align-items: center;
+}
+
+.participant a {
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.participant {
+    width: 120px;
+    display: flex;
+    flex-direction: column;
+}
+
+.participant-detailed {
+    display: flex;
+    align-items: flex-start;
+    width: 600px;
+}
+
+.summonerName  {
+    font-size: 16px;
+    margin-left: 8px;
+    margin-top: 24px;
+    text-decoration: none;
+    text-wrap: wrap;
+}
+
+.stat  {
+    margin-top: 24px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.stat-small  {
+    text-align: center;
+    font-size: 11px;
+}

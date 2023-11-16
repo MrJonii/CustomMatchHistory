@@ -131,3 +131,6 @@ dist
 
 # Cert
 *.pem
+
+# Build
+frontend/build

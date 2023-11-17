@@ -11,7 +11,7 @@ const Participant = (props) =>
     return (
       <div className='participant-shared participant'>
           <Link to='#'>
-            <img className="champion-thumbnail" src={images[`${props.player.champion}_0.jpg`]} alt='champion'></img>
+            <img className="champion-thumbnail" src={images.champions[`${props.player.champion}_0.jpg`]} alt='champion'></img>
           </Link>
           <Link to="#">{props.player.summonerName}</Link>
     </div>
@@ -36,7 +36,7 @@ const Participant = (props) =>
     return (
         <div className='participant-shared participant-detailed'>
           <Link to='#'>
-            <img className="champion-thumbnail" src={images[`${props.player.champion}_0.jpg`]} alt='champion'></img>
+            <img className="champion-thumbnail" src={images.champions[`${props.player.champion}_0.jpg`]} alt='champion'></img>
           </Link>
           <Link to="#" className='summonerName' style={{ width: '180px' }}>{props.player.summonerName}</Link>
           <div className="stat" style={{ width: '85px' }}>

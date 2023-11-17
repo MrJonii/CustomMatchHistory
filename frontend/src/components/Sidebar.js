@@ -17,6 +17,11 @@ const Sidebar = () => {
           </Link>
         </li>
         <li className='sidebar-item'>
+          <Link to='/players'>
+            <span>Players</span>
+          </Link>
+        </li>
+        <li className='sidebar-item'>
           <Link to='/champions'>
             <span>Champions</span>
           </Link>

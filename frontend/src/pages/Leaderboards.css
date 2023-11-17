@@ -1,0 +1,55 @@
+.leaderboards {
+    display: flex;
+    flex-direction: column;
+    margin-left: 250px;
+    justify-content: center;
+    align-items: center;
+}
+
+.leaderboards-selects {
+
+}
+
+.leaderboards-selects select {
+    margin: 20px 30px 10px 10px;
+    font-size: 20px;
+    padding: 10px;
+    background-color: #040D12;
+    border: 2px solid #202020;
+    border-radius: 10px;
+    color: #f0f0f0;
+}
+
+.drowdown:hover,
+.drowdown:checked,
+.drowdown:focus  {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    background-color: #202020;
+}
+
+.drowdown option:hover,
+.drowdown option:checked {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
+
+.entries {
+
+}
+
+.entriesHeader {
+    margin: 5px;
+    display: flex;
+    flex-direction: row;
+}
+
+.entriesHeader p {
+    width: 150px;
+    margin: 5px;
+}
+
+.header:hover {
+    box-shadow: 0 5px 2px -4px #F0F0F0;
+    cursor: pointer;
+}

@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import * as GiIcons from 'react-icons/gi'
 import * as AiIcons from 'react-icons/ai'
@@ -6,7 +5,6 @@ import * as AiIcons from 'react-icons/ai'
 import images from '../resources'
 
 import Participant from "./Participant";
-import Stat from './Stat';
 
 import './Team.css'
 
@@ -49,7 +47,7 @@ const Team = (props) =>
             {props.team.bans && props.team.bans.map((ban) => {
               return (
                 <Link to='#'>
-                  <img className="champion-thumbnail-ban" src={images[`${ban}_0.jpg`]} alt='champion' style={{ marginRight: '5px', marginTop: '5px' }}></img>
+                  <img className="champion-thumbnail-small" src={images.champions[`${ban}_0.jpg`]} alt='champion' style={{ marginRight: '5px', marginTop: '5px' }}></img>
                 </Link>
               )
             })}

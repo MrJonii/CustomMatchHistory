@@ -1,0 +1,36 @@
+.playerPreview {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #202020;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 5px;
+    background-color: #555555;
+}
+
+.playerPreview:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
+
+.playerPreview p {
+    margin: 5px;
+}
+
+.container {
+    width: 220px;
+    padding: 5px;
+}
+
+.container img {
+    margin: 0 5px;
+}
+
+.stat {
+    width: 60px;
+}
+
+.name {
+    width: 200px;
+}

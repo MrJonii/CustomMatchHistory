@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 import Home from './pages/Home'
 import MatchHistory from './pages/MatchHistory'
+import Players from './pages/Players'
 import Champions from './pages/Champions'
 import Leaderboards from './pages/Leaderboards'
 import Records from './pages/Records'
@@ -17,6 +18,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home/>}/>
             <Route path="/match-history" element={<MatchHistory/>}/>
+            <Route path="/players" element={<Players/>}/>
             <Route path="/champions" element={<Champions/>}/>
             <Route path="/leaderboards" element={<Leaderboards/>}/>
             <Route path="/records" element={<Records/>}/>

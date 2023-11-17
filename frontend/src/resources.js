@@ -6,6 +6,9 @@ function importAll(r)
   return images;
 }
 
-const images = importAll(require.context('../public/resources/champions', false, /\.(png|jpe?g|svg)$/));
+let images = {}
+
+images.champions = importAll(require.context('../public/resources/champions', false, /\.(png|jpe?g|svg)$/));
+images.roles = importAll(require.context('../public/resources/roles', false, /\.(png|jpe?g|svg)$/));
 
 export default images

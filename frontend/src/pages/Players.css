@@ -1,0 +1,16 @@
+.players {
+    margin-left: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.players-header {
+    width: 979px;
+    margin: 10px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}

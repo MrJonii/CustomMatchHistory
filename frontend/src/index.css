@@ -40,7 +40,7 @@ a:hover {
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
 
-.champion-thumbnail-ban {
+.champion-thumbnail-small {
   width: 32px;
   height: 32px;
   border-radius: 50%;
@@ -48,9 +48,21 @@ a:hover {
   border: 1px solid #F0F0F0
 }
 
-.champion-thumbnail-ban:hover {
+.champion-thumbnail-small:hover {
   width: 32px;
   height: 32px;
   border-radius: 50%;
   box-shadow: 0 0 5px #F0F0F0;
+}
+
+.role-thumbnail-small {
+  width: 32px;
+  height: 32px;
+  transition: box-shadow 0.3s ease;
+}
+
+.role-thumbnail-small:hover {
+  width: 32px;
+  height: 32px;
+  box-shadow: 0 5px 2px -4px #F0F0F0;
 }

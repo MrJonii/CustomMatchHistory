@@ -1,0 +1,104 @@
+.champion {
+    margin-left: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.champion-inner {
+    border-radius: 10px;
+    background-color: #555555;
+    border: 2px solid #202020;
+}
+
+.champion-inner-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.champion-inner-keyStats {
+    display: flex;
+    flex-direction: row;
+    border-radius: 10px;
+    background-color: #444444;
+    margin: 5px;
+    margin-left: 190px;
+}
+
+.champion-inner-keyStats-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: end;
+    justify-content: right;
+    margin: 15px 20px;
+}
+
+.championName {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 5px;
+    text-align: left;
+    width: 300px;
+}
+
+.stat {
+    margin: 5px 14px;
+    padding: 5px;
+}
+
+.roleStat {
+    padding: 10px;
+    width: 60px;
+    text-align: center;
+}
+
+.stat-header {
+    margin: 5px 0;
+    font-size: 12px;
+    font-style: italic;
+    white-space: nowrap;
+}
+
+.champion-inner-roleStats {
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+    align-items: center;
+    justify-content: left;
+}
+
+.role {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.champion-inner-playerStats {
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+    align-items: center;
+    justify-content: left;
+}
+
+.player {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #666666;
+    padding: 0 20px;
+    margin: 5px;
+    border-radius: 10px;
+    transition: box-shadow 0.3s ease;
+    width: 95%;
+}
+
+.player:hover {
+    cursor: pointer;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+

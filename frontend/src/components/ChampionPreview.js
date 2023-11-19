@@ -1,25 +1,48 @@
-import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
-import images from '../resources'
+import {images, colors} from '../resources'
 
 import './ChampionPreview.css'
 
-const red = '#E76161'
-const yellow = '#FF9130'
-const green = '#9CA777'
-
 const ChampionPreview = ( {champion} ) => {
-    return <div className="championPreview">
+
+    const navigate = useNavigate();
+
+    return <div className="championPreview" onClick={ () => navigate('/champions/' + champion.name) }>
            <img className="champion-thumbnail-small" src={images.champions[`${champion.name}_0.jpg`]} alt={champion.name} style={{margin: '5px'}}></img>
            <p className='name'>{champion.name}</p>
-           <p className='stat'>{champion.presence}%</p>
-           <p className='stat'>{champion.pickRate}%</p>
-           <p className='stat'>{isNaN(champion.banRate) ? '' : champion.banRate + '%'}</p>
-           <p className='stat'>{isNaN(champion.winRate) ? '' : champion.winRate + '%'}</p>
-           <p className='stat' style={{color: green}}>{champion.games}</p>
-           <p className='stat' style={{color: red}}>{champion.bans}</p>
-           <p className='stat' style={{color: green}}>{champion.wins}</p>
-           <p className='stat' style={{color: red}}>{champion.games - champion.wins}</p>
+           <div className="stat" style={{margin: '0 5px'}}>
+                <p className="stat-header">Presence</p>
+                <p className="stat-value">{champion.presence}%</p>
+            </div>
+            <div className="stat" style={{margin: '0 5px'}}>
+                <p className="stat-header">Pick Rate</p>
+                <p className="stat-value">{champion.pickRate}%</p>
+            </div>
+            <div className="stat" style={{margin: '0 5px'}}>
+                <p className="stat-header">Ban Rate</p>
+                <p className="stat-value">{champion.banRate}%</p>
+            </div>
+            <div className="stat" style={{margin: '0 5px'}}>
+                <p className="stat-header">Win Rate</p>
+                <p className="stat-value">{isNaN(champion.winRate) ? '-' : champion.winRate + '%'}</p>
+            </div>
+            <div className="stat" style={{margin: '0 5px'}}>
+                <p className="stat-header">Picked</p>
+                <p className="stat-value" style={{color: colors.green}}>{champion.games}</p>
+            </div>
+            <div className="stat" style={{margin: '0 5px'}}>
+                <p className="stat-header">Banned</p>
+                <p className="stat-value" style={{color: colors.red}}>{champion.bans}</p>
+            </div>
+            <div className="stat" style={{margin: '0 5px'}}>
+                <p className="stat-header">Won</p>
+                <p className="stat-value" style={{color: colors.green}}>{champion.wins}</p>
+            </div>
+            <div className="stat" style={{margin: '0 5px'}}>
+                <p className="stat-header">Lost</p>
+                <p className="stat-value" style={{color: colors.red}}>{champion.games - champion.wins}</p>
+            </div>
         </div>
 };
 

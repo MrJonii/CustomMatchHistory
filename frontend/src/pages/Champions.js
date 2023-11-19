@@ -6,8 +6,12 @@ import ChampionPreview from '../components/ChampionPreview';
 function compare(left, right)
 {
     // Descending
-    if(left.games + left.bans > right.games + right.bans) return -1;
-    if(left.games + left.bans < right.games + right.bans) return 1;
+    if(left.presence > right.presence) return -1;
+    if(left.presence < right.presence) return 1;
+
+    // Descending
+    if(left.bans > right.bans) return -1;
+    if(left.bans < right.bans) return 1;
 
     // Descending
     if(left.games > right.games) return -1;
@@ -100,10 +104,10 @@ const Champions = () =>
         {
           let champion = tempChampions[c];
 
-          champion.winRate = (champion.wins / champion.games * 100).toFixed(2);
-          champion.banRate = (champion.bans / matchCount * 100).toFixed(2);
-          champion.pickRate = (champion.games / matchCount * 100).toFixed(2);
-          champion.presence = ((champion.bans + champion.games) / matchCount * 100).toFixed(2);
+          champion.winRate = Number((champion.wins / champion.games * 100).toFixed(1));
+          champion.banRate = Number((champion.bans / matchCount * 100).toFixed(1));
+          champion.pickRate = Number((champion.games / matchCount * 100).toFixed(1));
+          champion.presence = Number(((champion.bans + champion.games) / matchCount * 100).toFixed(1));
         }
       }
 
@@ -117,17 +121,6 @@ const Champions = () =>
 
   return (
     <div className="champions">
-        <div className="champions-header">
-            <p style={{marginLeft: '10px'}}>Champion</p>
-            <p style={{marginLeft: '120px'}}>Presence</p>
-            <p style={{marginLeft: '15px'}}>Pick Rate</p>
-            <p style={{marginLeft: '15px'}}>Ban Rate</p>
-            <p style={{marginLeft: '15px'}}>Win Rate</p>
-            <p style={{marginLeft: '20px'}}>Picked</p>
-            <p style={{marginLeft: '30px'}}>Banned</p>
-            <p style={{marginLeft: '35px'}}>Won</p>
-            <p style={{marginLeft: '50px'}}>Lost</p>
-        </div>
       {champions && champions.map((champion) => {
         return (
           <ChampionPreview champion={champion}/>

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-import images from '../resources'
+import {images} from '../resources'
 import './Leaderboards.css'
 import LeaderboardEntry from '../components/LeaderboardEntry';
 
@@ -9,9 +9,10 @@ const Leaderboards = () => {
   const [champions, setChampions] = useState([]);
   const [sorted, setSorted] = useState([]);
   const [sortStrategy, setSortStrategy] = useState({stat: 'perGame', ascending: false});
-  const [selectedStat, setSelectedStat] = useState('kills');
+  const [selectedStat, setSelectedStat] = useState('_');
   const [selectedRole, setSelectedRole] = useState('All');
   const [selectedChampion, setSelectedChampion] = useState('All');
+  const [hasSelected, setHasSelected] = useState(false);
 
   const compare = (left, right, order) => {
     for(let o in order)
@@ -102,6 +103,7 @@ const Leaderboards = () => {
   }
 
   const handleSelectStat = (event) => {
+    setHasSelected(true);
     setSelectedStat(event.target.value);
     refresh(event.target.value, selectedRole, selectedChampion, sortStrategy);
   }
@@ -176,6 +178,7 @@ const Leaderboards = () => {
     <div className="leaderboards">
       <div className="leaderboards-selects">
         <select className='drowdown' value={selectedStat} onChange={handleSelectStat}>
+          {!hasSelected && <option value='_'>Select</option>}
           <option value='kills'>Kills</option>
           <option value='deaths'>Deaths</option>
           <option value='assists'>Assists</option>

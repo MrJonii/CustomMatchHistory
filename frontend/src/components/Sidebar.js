@@ -6,11 +6,11 @@ const Sidebar = () => {
   return (
     <nav className='sidebar'>
       <ul className='sidebar-items'>
-        <li className='sidebar-item'>
+        {/* <li className='sidebar-item'>
           <Link to='/'>
             <span>Home</span>
           </Link>
-        </li>
+        </li> */}
         <li className='sidebar-item'>
           <Link to='/match-history'>
             <span>Match History</span>

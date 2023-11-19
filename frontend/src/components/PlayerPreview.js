@@ -1,6 +1,6 @@
-import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
-import images from '../resources'
+import {images} from '../resources'
 
 import './PlayerPreview.css'
 
@@ -10,9 +10,16 @@ const green = '#9CA777'
 
 const PlayerPreview = ( {player} ) => {
 
+    const navigate = useNavigate();
+
     const winRateColor = player.winRate > 55 ? green : player.winRate > 45 ? yellow : red;
 
-    return <div className="playerPreview">
+    const handleChampionClick = (event, champion) => {
+        navigate('/champions/' + champion);
+        event.stopPropagation();
+    }
+
+    return <div className="playerPreview" onClick={() => navigate('/players/' + player.riotId)}>
                 <p className='name'>{player.summonerName}</p>
                 <p className='stat'>{player.games}</p>
                 <p className='stat' style={{color: green}}>{player.wins}</p>
@@ -28,9 +35,7 @@ const PlayerPreview = ( {player} ) => {
                 <div className="container">
                     {player.champions && player.champions.map(champion => {
                         return (
-                            <Link to='#'>
-                                <img className="champion-thumbnail-small" src={images.champions[`${champion.name}_0.jpg`]} alt={champion.name}></img>
-                            </Link>
+                            <img className="champion-thumbnail-small" src={images.champions[`${champion.name}_0.jpg`]} alt={champion.name} onClick={(event) => handleChampionClick(event, champion.name)}></img>
                         )
                     })}
                 </div>

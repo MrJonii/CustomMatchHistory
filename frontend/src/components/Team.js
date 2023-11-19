@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import * as GiIcons from 'react-icons/gi'
 import * as AiIcons from 'react-icons/ai'
 
-import images from '../resources'
+import {images} from '../resources'
 
 import Participant from "./Participant";
 
@@ -46,7 +46,7 @@ const Team = (props) =>
             <p>BANS</p>
             {props.team.bans && props.team.bans.map((ban) => {
               return (
-                <Link to='#'>
+                <Link to={'/champions/' + ban}>
                   <img className="champion-thumbnail-small" src={images.champions[`${ban}_0.jpg`]} alt='champion' style={{ marginRight: '5px', marginTop: '5px' }}></img>
                 </Link>
               )

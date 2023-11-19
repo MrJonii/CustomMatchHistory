@@ -1,19 +1,6 @@
-import { useState } from 'react'
+const Stat = ( {image} ) => {
+    return <div className="stat">
 
-const Stat = ( props ) => {
-    const [isHovered, setIsHovered] = useState(false);
-
-
-    return <div className="stat" style={props.style} onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
-        {/* { isHovered && (
-        <div className="tooltip">
-            <p>{props.text}</p>
-        </div>
-        )} */}
-        <div className="tooltip">
-            <p>{props.text}</p>
-        </div>
-        {props.children}
     </div>
 };
 

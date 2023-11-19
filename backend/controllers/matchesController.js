@@ -48,7 +48,7 @@ const addMatch = async (request, response) =>
       const side = teamId == 0 ? 'Blue': 'Red';
       let bans = [];
 
-      for(let banId = 0; banId < 5; banId++)
+      for(let banId = 0; banId < bans.length; banId++)
       {
         const champion = await Champion.findOne({key: request.body.teams[teamId].bans[banId].championId});
         bans.push(champion.name);
@@ -80,7 +80,7 @@ const addMatch = async (request, response) =>
       player.deaths = participant.stats.deaths;
       player.assists = participant.stats.assists;
       player.gold = participant.stats.goldEarned;
-      player.cs = participant.stats.totalMinionsKilled + participant.stats.neutralMonstersKilled;
+      player.cs = participant.stats.totalMinionsKilled + participant.stats.neutralMinionsKilled;
       player.damageDealt = participant.stats.totalDamageDealtToChampions;
       player.damageTaken = participant.stats.totalDamageTaken;
       player.damageTurrets = participant.stats.damageDealtToTurrets;

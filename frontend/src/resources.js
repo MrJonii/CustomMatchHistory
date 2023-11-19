@@ -11,4 +11,11 @@ let images = {}
 images.champions = importAll(require.context('../public/resources/champions', false, /\.(png|jpe?g|svg)$/));
 images.roles = importAll(require.context('../public/resources/roles', false, /\.(png|jpe?g|svg)$/));
 
-export default images
+const colors = {
+  red: '#E76161',
+  yellow: '#FF9130',
+  green: '#9CA777',
+  white: '#F0F0F0'
+}
+
+export {images, colors};

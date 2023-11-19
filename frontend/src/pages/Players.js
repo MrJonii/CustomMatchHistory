@@ -132,15 +132,6 @@ const Players = () =>
 
   return (
     <div className="players">
-        <div className="players-header">
-            <p style={{marginLeft: '10px'}}>Summoner Name</p>
-            <p style={{marginLeft: '70px'}}>Played</p>
-            <p style={{marginLeft: '25px'}}>Won</p>
-            <p style={{marginLeft: '35px'}}>Lost</p>
-            <p style={{marginLeft: '30px'}}>Win Rate</p>
-            <p style={{marginLeft: '100px'}}>Roles</p>
-            <p style={{marginLeft: '150px'}}>Champions</p>
-        </div>
       {players && players.map((player) => {
         return (
           <PlayerPreview player={player}/>

@@ -45,14 +45,14 @@ a:hover {
   height: 32px;
   border-radius: 50%;
   transition: box-shadow 0.3s ease;
-  border: 1px solid #F0F0F0
+  border: 1px solid #202020
 }
 
 .champion-thumbnail-small:hover {
   width: 32px;
   height: 32px;
   border-radius: 50%;
-  box-shadow: 0 0 5px #F0F0F0;
+  box-shadow: 0 0 5px #202020;
 }
 
 .champion-thumbnail-medium {
@@ -60,14 +60,14 @@ a:hover {
   height: 48px;
   border-radius: 50%;
   transition: box-shadow 0.3s ease;
-  border: 1px solid #F0F0F0
+  border: 1px solid #202020
 }
 
 .champion-thumbnail-medium:hover {
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  box-shadow: 0 0 5px #F0F0F0;
+  box-shadow: 0 0 5px #202020;
 }
 
 .role-thumbnail-medium {
@@ -85,5 +85,5 @@ a:hover {
 .role-thumbnail-small:hover {
   width: 32px;
   height: 32px;
-  box-shadow: 0 5px 2px -4px #F0F0F0;
+  box-shadow: 0 5px 2px -4px #202020;
 }

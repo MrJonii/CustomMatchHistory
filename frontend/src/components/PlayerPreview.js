@@ -21,10 +21,22 @@ const PlayerPreview = ( {player} ) => {
 
     return <div className="playerPreview" onClick={() => navigate('/players/' + player.riotId)}>
                 <p className='name'>{player.summonerName}</p>
-                <p className='stat'>{player.games}</p>
-                <p className='stat' style={{color: green}}>{player.wins}</p>
-                <p className='stat' style={{color: red}}>{player.games - player.wins}</p>
-                <p className='stat' style={{color: winRateColor, width: '75px'}}>{player.winRate}%</p>
+                <div className="stat" style={{margin: '0 10px'}}>
+                    <p className="stat-header">Played</p>
+                    <p className="stat-value">{player.games}</p>
+                </div>
+                <div className="stat" style={{margin: '0 10px'}}>
+                    <p className="stat-header">Won</p>
+                    <p className="stat-value" style={{color: green}}>{player.wins}</p>
+                </div>
+                <div className="stat" style={{margin: '0 10px'}}>
+                    <p className="stat-header">Lost</p>
+                    <p className="stat-value" style={{color: red}}>{player.games - player.wins}</p>
+                </div>
+                <div className="stat" style={{margin: '0 10px'}}>
+                    <p className="stat-header">Win Rate</p>
+                    <p className="stat-value" style={{color: winRateColor}}>{player.winRate}%</p>
+                </div>
                 <div className="container">
                     {player.roles && player.roles.map(role => {
                         return (

@@ -31,11 +31,11 @@ const Sidebar = () => {
             <span>Leaderboards</span>
           </Link>
         </li>
-        <li className='sidebar-item'>
+        {/* <li className='sidebar-item'>
           <Link to='/records'>
             <span>Records</span>
           </Link>
-        </li>
+        </li> */}
       </ul>
     </nav>
   );

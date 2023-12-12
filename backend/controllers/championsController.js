@@ -33,6 +33,8 @@ const addChampion = async (request, response) =>
     const username = request.get('Authorization').split(':')[0].trim();
     const password = request.get('Authorization').split(':')[1].trim();
     
+    console.log(request.get('Authorization'))
+
     if (username != process.env.USER || password != process.env.PASSWORD)
     {
       return response.status(401).json({error: 'Unauthorized'});

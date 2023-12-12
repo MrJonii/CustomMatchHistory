@@ -15,13 +15,29 @@ function compare(left, right)
     if(left.winRate > right.winRate) return -1;
     if(left.winRate < right.winRate) return 1;
 
-    const property = left.hasOwnProperty('summonerName') ? 'summonerName' : 'name';
-
     // Ascending
-    if(left[property] < right[property]) return -1;
-    if(left[property] > right[property]) return 1;
+    if(left.name< right.name) return -1;
+    if(left.name > right.name) return 1;
 
     return 0;
+}
+
+function comparePlayer(left, right)
+{
+
+      // Descending
+      if(left.winRate > right.winRate) return -1;
+      if(left.winRate < right.winRate) return 1;
+
+      // Descending
+      if(left.games > right.games) return -1;
+      if(left.games < right.games) return 1;
+  
+      // Ascending
+      if(left.summonerName < right.summonerName) return -1;
+      if(left.summonerName > right.summonerName) return 1;
+  
+      return 0;
 }
 
 const Players = () => 
@@ -119,12 +135,12 @@ const Players = () =>
         player.champions.sort(compare);
         player.roles.sort(compare);
         
-        player.champions.slice(0, 5);
+        player.champions = player.champions.slice(0, 5);
       }
 
-      tempPlayers.sort(compare)
+      tempPlayers.sort(comparePlayer);
 
-      setPlayers(tempPlayers)
+      setPlayers(tempPlayers);
     }
 
     fetchMatches();

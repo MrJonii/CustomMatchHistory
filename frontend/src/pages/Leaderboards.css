@@ -50,6 +50,5 @@
 }
 
 .header:hover {
-    box-shadow: 0 5px 2px -4px #F0F0F0;
     cursor: pointer;
 }

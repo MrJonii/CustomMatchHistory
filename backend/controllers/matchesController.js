@@ -51,7 +51,7 @@ const addMatch = async (request, response) =>
       for(let banId = 0; banId < bans.length; banId++)
       {
         const champion = await Champion.findOne({key: request.body.teams[teamId].bans[banId].championId});
-        bans.push(champion.name);
+        bans.push(champion == null ? request.body.teams[teamId].bans[banId].championId : champion.name);
       }
 
       teams.push({
@@ -170,7 +170,8 @@ const updateMatch = async (request, response) =>
     return response.status(404).json({error: "Match not found. Invalid ID type"});
   }
 
-  const match = await Match.findOneAndUpdate({_id: id}, ...request.body);
+  console.log(request.body)
+  const match = await Match.findOneAndUpdate({_id: id}, request.body);
 
   if (!match)
   {

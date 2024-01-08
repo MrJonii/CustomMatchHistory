@@ -32,8 +32,8 @@ const Sidebar = ({ setSeason }) => {
             </Link>
           </li>
           <li>
-            <div style={{display: 'flex', justifyContent: 'center'}}>
-              <select id='season' className='dropdown season-dropdown' style={{marginTop: "550px"}} onChange={handleSeasonChange}>
+            <div style={{ margin: '16px 0px', display: 'flex', justifyContent: 'center'}}>
+              <select id='season' className='dropdown season-dropdown' onChange={handleSeasonChange}>
                 <option value='2'>Season 2</option>
                 <option value='3' selected={true}>Season 3</option>
               </select>

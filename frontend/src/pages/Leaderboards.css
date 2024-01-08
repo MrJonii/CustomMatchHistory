@@ -20,20 +20,6 @@
     color: #f0f0f0;
 }
 
-.drowdown:hover,
-.drowdown:checked,
-.drowdown:focus  {
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-    cursor: pointer;
-    background-color: #202020;
-}
-
-.drowdown option:hover,
-.drowdown option:checked {
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-    cursor: pointer;
-}
-
 .entries {
 
 }

@@ -28,14 +28,14 @@ function compare(left, right)
     return 0;
 }
 
-const Champions = () => 
+const Champions = ({season}) => 
 {
   const [champions, setChampions] = useState([]);
 
   useEffect(() => {
     const fetchMatches = async () =>
     {
-      const response = await fetch('/api/matches');
+      const response = await fetch(`/api/matches?season=${season}`);
       const json = await response.json();
       let matches = [];
 
@@ -117,7 +117,7 @@ const Champions = () =>
     }
 
     fetchMatches();
-  }, []);
+  }, [season]);
 
   return (
     <div className="champions">

@@ -76,6 +76,10 @@ const matchSchema = new Schema({
     type: String,
     required: true
   },
+  season: {
+    type: Number,
+    required: true
+  },
   duration: {
     type: Number,
     required: true

@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { useState } from 'react'
 
 import Home from './pages/Home'
 import MatchHistory from './pages/MatchHistory'
@@ -12,21 +13,23 @@ import Records from './pages/Records'
 import Sidebar from './components/Sidebar'
 
 function App() {
+  const [season, setSeason] = useState(3);
+
   return (
     <div className="App">
       <BrowserRouter>
-        <Sidebar></Sidebar>
+        <Sidebar setSeason={setSeason}></Sidebar>
         <div className="pages">
           <Routes>
-            <Route path="/" element={<MatchHistory/>}/>
-            <Route path="/match-history" element={<MatchHistory/>}/>
-            <Route path="/match-history/:id" element={<MatchHistory/>}/>
-            <Route path="/players" element={<Players/>}/>
-            <Route path="/players/:id" element={<Player/>}/>
-            <Route path="/champions" element={<Champions/>}/>
-            <Route path="/champions/:id" element={<Champion/>}/>
-            <Route path="/leaderboards" element={<Leaderboards/>}/>
-            <Route path="/records" element={<Records/>}/>
+            <Route path="/" element={<MatchHistory season={season}/>}/>
+            <Route path="/match-history" element={<MatchHistory season={season}/>}/>
+            <Route path="/match-history/:id" element={<MatchHistory season={season}/>}/>
+            <Route path="/players" element={<Players season={season}/>}/>
+            <Route path="/players/:id" element={<Player season={season}/>}/>
+            <Route path="/champions" element={<Champions season={season}/>}/>
+            <Route path="/champions/:id" element={<Champion season={season}/>}/>
+            <Route path="/leaderboards" element={<Leaderboards season={season}/>}/>
+            <Route path="/records" element={<Records season={season}/>}/>
           </Routes>
         </div>
       </BrowserRouter>

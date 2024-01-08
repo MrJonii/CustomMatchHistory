@@ -4,7 +4,8 @@ const Champion = require('../models/championModel');
 
 const getMatches = async (request, response) =>
 {
-  const matches = await Match.find({}).sort({createdAt: -1});
+  const season = request.query.season;
+  const matches = await Match.find({season: season}).sort({createdAt: -1});
   response.status(200).json(matches);
 };
 
@@ -170,7 +171,6 @@ const updateMatch = async (request, response) =>
     return response.status(404).json({error: "Match not found. Invalid ID type"});
   }
 
-  console.log(request.body)
   const match = await Match.findOneAndUpdate({_id: id}, request.body);
 
   if (!match)

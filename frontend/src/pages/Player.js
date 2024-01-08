@@ -26,7 +26,7 @@ function compare(left, right)
     return 0;
 }
 
-const Player = () => {
+const Player = ({season}) => {
 
     const { id } = useParams();
 
@@ -37,7 +37,7 @@ const Player = () => {
     useEffect(() => {
         const fetchMatches = async () =>
         {
-          const response = await fetch('/api/matches');
+          const response = await fetch(`/api/matches?season=${season}`);
           const json = await response.json();
 
           if(!response.ok)
@@ -232,7 +232,7 @@ const Player = () => {
         }
 
         fetchMatches();
-    }, [id]);
+    }, [id, season]);
 
     const navigate = useNavigate();
 

@@ -87,3 +87,17 @@ a:hover {
   height: 32px;
   box-shadow: 0 5px 2px -4px #202020;
 }
+
+.dropdown:hover,
+.dropdown:checked,
+.dropdown:focus  {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    background-color: #202020;
+}
+
+.dropdown option:hover,
+.dropdown option:checked {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}

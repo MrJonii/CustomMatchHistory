@@ -26,7 +26,7 @@ function compare(left, right)
     return 0;
 }
 
-const Champion = () => {
+const Champion = ({season}) => {
     const { id } = useParams();
 
     const [players, setPlayers] = useState([]);
@@ -38,7 +38,7 @@ const Champion = () => {
     useEffect(() => {
         const fetchMatches = async () =>
         {
-          const response = await fetch('/api/matches');
+          const response = await fetch(`/api/matches?season=${season}`);
           const json = await response.json();
 
           if(!response.ok)
@@ -164,7 +164,7 @@ const Champion = () => {
         }
 
         fetchMatches();
-    }, [id]);
+    }, [id, season]);
 
     const presence = (100 * (picks + bans) / matchCount).toFixed(1);
     const winRate = (100 * wins / picks).toFixed(1);

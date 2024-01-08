@@ -4,7 +4,7 @@ import {images} from '../resources'
 import './Leaderboards.css'
 import LeaderboardEntry from '../components/LeaderboardEntry';
 
-const Leaderboards = () => {
+const Leaderboards = ({season}) => {
   const [matches, setMatches] = useState([]);
   const [champions, setChampions] = useState([]);
   const [sorted, setSorted] = useState([]);
@@ -121,7 +121,7 @@ const Leaderboards = () => {
   useEffect(() => {
     const fetchMatches = async () =>
     {
-      const response = await fetch('/api/matches');
+      const response = await fetch(`/api/matches?season=${season}`);
       const json = await response.json();
 
       if(response.ok)
@@ -151,7 +151,7 @@ const Leaderboards = () => {
       setChampions([...new Set(tempChampions)]);
     }
     fetchMatches();
-  }, []);
+  }, [season]);
 
   const handleClickHeader = (strategy) => {
     let tempStrategy = {stat: strategy};
@@ -177,7 +177,7 @@ const Leaderboards = () => {
   return (
     <div className="leaderboards">
       <div className="leaderboards-selects">
-        <select className='drowdown' value={selectedStat} onChange={handleSelectStat}>
+        <select className='dropdown' value={selectedStat} onChange={handleSelectStat}>
           {!hasSelected && <option value='_'>Select</option>}
           <option value='kills'>Kills</option>
           <option value='deaths'>Deaths</option>
@@ -189,7 +189,7 @@ const Leaderboards = () => {
           <option value='damageTurrets'>Damage Dealt To Turrets</option>
           <option value='visionScore'>Vision Score</option>
         </select>
-        <select className='drowdown' value={selectedRole} onChange={handleSelectRole}>
+        <select className='dropdown' value={selectedRole} onChange={handleSelectRole}>
           <option value='All'>All</option>
           <option value='Top'>Top</option>
           <option value='Jungle'>Jungle</option>
@@ -197,7 +197,7 @@ const Leaderboards = () => {
           <option value='Adc'>Adc</option>
           <option value='Support'>Support</option>
         </select>
-        <select className='drowdown' value={selectedChampion} onChange={handleSelectChampion}>
+        <select className='dropdown' value={selectedChampion} onChange={handleSelectChampion}>
           <option value='All'>All</option>
           {champions && champions.map((champion) => {
             return (

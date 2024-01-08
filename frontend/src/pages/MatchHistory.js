@@ -4,24 +4,24 @@ import Match from '../components/Match'
 
 import './MatchHistory.css'
 
-const MatchHistory = () => 
+const MatchHistory = ({season}) => 
 {
   const [matches, setMatches] = useState([]);
 
   useEffect(() => {
     const fetchMatches = async () =>
     {
-      const response = await fetch('/api/matches');
+      const response = await fetch(`/api/matches?season=${season}`);
       const json = await response.json();
 
       if(response.ok)
       {
-        setMatches(json)
+        setMatches(json);
       }
     }
 
     fetchMatches();
-  }, []);
+  }, [season]);
 
   return (
     <div className="matchHistory">

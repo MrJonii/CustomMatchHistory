@@ -2,6 +2,7 @@ import requests
 import base64
 import sys
 import json
+import os
 
 LOCKFILE = 'C:/Riot Games/League of Legends/lockfile'
 CERT = 'D:/Code/CustomMatchHistory/riotgames.pem'
@@ -34,6 +35,8 @@ print(response.status_code)
 
 j = response.json()
 
+j['season'] = 3
+
 for i in range(10):
     team = 0 if i < 5 else 1
     j['teams'][team]['bans'].append(sys.argv[i + 2])
@@ -46,3 +49,5 @@ url = f'http://127.0.0.1:42069/api/matches'
 response = requests.post(url, headers = {'Authorization': f'{backend_username}:{backend_password}'}, json = j)
 print(response.status_code)
 print(response.json())
+
+os.system('py update_bans.py')

@@ -18,8 +18,9 @@ with open('backend/.env') as file:
             backend_password = split[1].strip()
 
 url = f'http://127.0.0.1:42069/api/matches'
+urlS3 = f'http://127.0.0.1:42069/api/matches?season=3'
 
-response = requests.get(url)
+response = requests.get(urlS3)
 j = response.json()
 
 for match in j:
@@ -32,3 +33,10 @@ for match in j:
                 team['bans'].append(ban)
 
         response = requests.patch(f'{url}/{match["_id"]}', headers = {'Authorization': f'{backend_username}:{backend_password}'}, json = match)
+
+    for team in match['teams']:
+        for player in team['players']:
+            if player['riotId'] == '419e74a6-983d-53fa-823b-333d69b07ab2':
+                player['riotId'] = '98a8790d-3018-5351-8b89-4e36441ff486'
+
+                response = requests.patch(f'{url}/{match["_id"]}', headers = {'Authorization': f'{backend_username}:{backend_password}'}, json = match)

@@ -2,10 +2,36 @@ const mongoose = require('mongoose');
 const Match = require('../models/matchModel');
 const Champion = require('../models/championModel');
 
+const aliases = {
+  '98a8790d-3018-5351-8b89-4e36441ff486': 'HubKur',
+  'artur': 'Artur'
+}
+
 const getMatches = async (request, response) =>
 {
   const season = request.query.season;
   const matches = await Match.find({season: season}).sort({createdAt: -1});
+
+  for(const m in matches){
+    const match = matches[m];
+
+    for(const t in match.teams){
+      const team = match.teams[t];
+
+      for(const p in team.players){
+        const player = team.players[p];
+        
+        if(aliases.hasOwnProperty(player.riotId)){
+          player.summonerName = aliases[player.riotId];
+        }
+        
+        console.log(player);
+      }
+    }
+
+    break;
+  }
+
   response.status(200).json(matches);
 };
 
@@ -112,6 +138,7 @@ const addMatch = async (request, response) =>
     }
 
     const match = await Match.create({
+      season: 3,
       gameId: request.body.gameId,
       duration: request.body.gameDuration, 
       win: winningTeam,

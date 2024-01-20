@@ -54,6 +54,10 @@ const playerSchema = new Schema({
     type: Number,
     required: true
   },
+  mvp:{
+    type: Boolean,
+    required: false
+  }
 });
 
 const teamSchema = new Schema({

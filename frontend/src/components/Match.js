@@ -26,10 +26,10 @@ const Match = (props) =>
           );
         })}
       </div>
-      {/* <span className='match-details-toggle' onClick={handleToggleDetails}>
+      <span className='match-details-toggle' onClick={handleToggleDetails}>
         <p>{isDetailed ? 'Hide Details' : 'Show Details'}</p>
         <CgIcons.CgDetailsMore color='#F0F0F0'></CgIcons.CgDetailsMore>
-      </span> */}
+      </span>
     </div>
   );
 };

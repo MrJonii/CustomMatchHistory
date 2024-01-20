@@ -33,6 +33,10 @@ a:hover {
   border: 3px solid #202020
 }
 
+.mvp {
+  border: 3px solid #C5B358
+}
+
 .champion-thumbnail:hover {
   width: 96px;
   height: 96px;

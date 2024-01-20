@@ -11,7 +11,7 @@ const Participant = (props) =>
     return (
       <div className='participant-shared participant'>
           <Link to={'/champions/' +  props.player.champion}>
-            <img className="champion-thumbnail" src={images.champions[`${props.player.champion}_0.jpg`]} alt='champion'></img>
+            <img className={ props.player.mvp !== undefined ? "champion-thumbnail mvp" : "champion-thumbnail"} src={images.champions[`${props.player.champion}_0.jpg`]} alt='champion'></img>
           </Link>
           <Link to={'/players/' + props.player.riotId}>{props.player.summonerName}</Link>
     </div>
@@ -38,7 +38,7 @@ const Participant = (props) =>
           <Link to={'/champions/' +  props.player.champion}>
             <img className="champion-thumbnail" src={images.champions[`${props.player.champion}_0.jpg`]} alt='champion'></img>
           </Link>
-          <Link to={'/players/' + props.player.riotId} className='summonerName' style={{ width: '180px' }}>{props.player.summonerName}</Link>
+          <Link to={'/players/' + props.player.riotId} className='summonerName' style={{ width: '150px' }}>{props.player.summonerName}</Link>
           <div className="stat" style={{ width: '85px' }}>
             <p>{props.player.kills}/{props.player.deaths}/{props.player.assists}</p>
             <p className='stat-small' style={{ color: kda > 5 ? green : kda > 2 ? yellow : red}}>{kda}</p>

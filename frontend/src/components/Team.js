@@ -62,12 +62,12 @@ const Team = (props) =>
           </div>
         </div>
         <div className="team-detailed-header">
-          <GiIcons.GiDeathSkull style={{ color:'#F0F0F0', width: '32px', height: '32px', marginLeft: '265px' }}></GiIcons.GiDeathSkull>
-          <GiIcons.GiBullyMinion style={{ color:'#F0F0F0', width: '32px', height: '32px', marginLeft: '30px' }}></GiIcons.GiBullyMinion>
-          <GiIcons.GiGoldBar style={{ color:'#F0F0F0', width: '32px', height: '32px', marginLeft: '30px' }}></GiIcons.GiGoldBar>
-          <GiIcons.GiBloodySword style={{ color:'#F0F0F0', width: '32px', height: '32px', marginLeft: '30px' }}></GiIcons.GiBloodySword>
-          <GiIcons.GiBleedingWound style={{ color:'#F0F0F0', width: '32px', height: '32px', marginLeft: '35px' }}></GiIcons.GiBleedingWound>
-          <AiIcons.AiFillEye style={{ color:'#F0F0F0', width: '32px', height: '32px', marginLeft: '20px' }}></AiIcons.AiFillEye>
+          <GiIcons.GiDeathSkull style={{ color:'#F0F0F0', width: '32px', height: '32px', marginLeft: '230px' }}></GiIcons.GiDeathSkull>
+          <GiIcons.GiBullyMinion style={{ color:'#F0F0F0', width: '32px', height: '32px', marginLeft: '55px' }}></GiIcons.GiBullyMinion>
+          <GiIcons.GiGoldBar style={{ color:'#F0F0F0', width: '32px', height: '32px', marginLeft: '55px' }}></GiIcons.GiGoldBar>
+          <GiIcons.GiBloodySword style={{ color:'#F0F0F0', width: '32px', height: '32px', marginLeft: '55px' }}></GiIcons.GiBloodySword>
+          <GiIcons.GiBleedingWound style={{ color:'#F0F0F0', width: '32px', height: '32px', marginLeft: '60px' }}></GiIcons.GiBleedingWound>
+          <AiIcons.AiFillEye style={{ color:'#F0F0F0', width: '32px', height: '32px', marginLeft: '40px' }}></AiIcons.AiFillEye>
         </div>
           {props.team.players && props.team.players.map((player) => {
             return (

@@ -26,7 +26,6 @@ with open('backend/.env') as file:
         if split[0] == 'PASSWORD':
             backend_password = split[1].strip()
 
-
 url = f'https://127.0.0.1:{port}/lol-match-history/v1/games/{sys.argv[1]}'
 auth = f"Basic {base64.b64encode(f'riot:{password}'.encode('ascii')).decode('ascii')}"
 
@@ -40,14 +39,26 @@ j['season'] = 3
 for i in range(10):
     team = 0 if i < 5 else 1
     j['teams'][team]['bans'].append(sys.argv[i + 2])
-
+       
 with open('match.json', 'w') as file:
     file.write(json.dumps(j, indent = 4))
 
 url = f'http://127.0.0.1:42069/api/matches'
 
 response = requests.post(url, headers = {'Authorization': f'{backend_username}:{backend_password}'}, json = j)
-print(response.status_code)
-print(response.json())
+j = response.json()
 
-os.system('py update_bans.py')
+url = f'http://127.0.0.1:42069/api/matches/{j["_id"]}'
+response = requests.get(url, headers = {'Authorization': f'{backend_username}:{backend_password}'})
+
+m = response.json()
+
+for t in m['teams']:
+    for p in t['players']:
+        if p['champion'] == sys.argv[12] or p['champion'] == sys.argv[13]:
+            p['mvp'] = True
+
+response = requests.patch(url, headers = {'Authorization': f'{backend_username}:{backend_password}'}, json = m)
+
+os.system(f'py update_bans.py')
+

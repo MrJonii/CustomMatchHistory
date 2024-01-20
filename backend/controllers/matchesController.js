@@ -24,12 +24,8 @@ const getMatches = async (request, response) =>
         if(aliases.hasOwnProperty(player.riotId)){
           player.summonerName = aliases[player.riotId];
         }
-        
-        console.log(player);
       }
     }
-
-    break;
   }
 
   response.status(200).json(matches);

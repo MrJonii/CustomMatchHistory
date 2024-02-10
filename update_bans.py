@@ -23,6 +23,25 @@ urlS3 = f'http://127.0.0.1:42069/api/matches?season=3'
 response = requests.get(urlS3)
 j = response.json()
 
+# for match in j:
+#     blue = False
+#     red = False
+
+
+#     for team in match['teams']:
+#         for ban in team['bans']:
+#             if ban == 'Orianna':
+#                 if team['side'] == 'Blue':
+#                     blue = True
+#                 else:
+#                     red = True
+
+#     if blue and red:
+#         x = 5
+
+
+
+
 for match in j:
     if len(match['teams'][0]['bans']) == 0:
         for i in range(len(match['riotMatch']['teams'])):

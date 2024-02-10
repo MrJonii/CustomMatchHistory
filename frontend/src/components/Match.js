@@ -7,7 +7,7 @@ import './Match.css'
 
 const Match = (props) => 
 {
-  const [isDetailed, setIsDetailed] = useState(false);
+  const [isDetailed, setIsDetailed] = useState(props.isDetailed);
 
   const handleToggleDetails = () => {
     setIsDetailed(!isDetailed)
@@ -17,7 +17,7 @@ const Match = (props) =>
   const seconds = props.match.duration - minutes * 60;
 
   return (
-    <div className='match'>
+    <div className='match' id={props.match.gameId}>
       {isDetailed && <p className='duration'>{ minutes }:{ seconds < 10 ? '0' : '' }{ seconds }</p>}
       <div className='match-teamContainer'>
         {props.match.teams && props.match.teams.map((team) => {

@@ -1,0 +1,80 @@
+.lobby {
+    margin-left: 250px;
+    display: flex;
+    justify-content: center;
+}
+
+.lobby-select {
+    position: absolute;
+    cursor: pointer;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    text-align: center;
+    text-wrap: wrap;
+    word-wrap: break-word;
+    font-size: 0;
+    align-items: center;
+    justify-content: center;
+    background-color: #202020;
+    color: #f0f0f0;
+}
+
+.lobby-select:hover,
+.lobby-select:checked,
+.lobby-select:focus  {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    background-color: #202020;
+}
+
+.lobby-select option:hover,
+.lobby-select option:checked {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
+
+.player-text {
+    position: absolute;
+    width: 200px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    color: #dd2c2c;
+}
+
+.lobby-select option {
+    font-size: 14px;
+}
+
+.team-select {
+    position: absolute;
+    cursor: pointer;
+    width: 120px;
+    height: 120px;
+}
+
+.selected-option {
+    padding: 10px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+  
+.team-select-options {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    border: 1px solid #ccc;
+}
+  
+.team-select-option {
+    padding: 10px;
+    cursor: pointer;
+}
+  
+.team-select-option img {
+    width: 50px;
+    height: 50px;
+}

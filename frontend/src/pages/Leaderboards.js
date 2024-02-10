@@ -166,7 +166,6 @@ const Leaderboards = ({season}) => {
     }
 
     setSortStrategy(tempStrategy);
-    console.log(selectedStat, selectedRole, selectedChampion, tempStrategy)
     refresh(selectedStat, selectedRole, selectedChampion, tempStrategy);
   }
 

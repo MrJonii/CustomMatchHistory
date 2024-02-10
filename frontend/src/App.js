@@ -9,6 +9,7 @@ import Champions from './pages/Champions'
 import Champion from './pages/Champion'
 import Leaderboards from './pages/Leaderboards'
 import Records from './pages/Records'
+import Lobby from './pages/Lobby'
 
 import Sidebar from './components/Sidebar'
 
@@ -21,7 +22,7 @@ function App() {
         <Sidebar setSeason={setSeason}></Sidebar>
         <div className="pages">
           <Routes>
-            <Route path="/" element={<MatchHistory season={season}/>}/>
+            <Route path="/" element={<Home season={season}/>}/>
             <Route path="/match-history" element={<MatchHistory season={season}/>}/>
             <Route path="/match-history/:id" element={<MatchHistory season={season}/>}/>
             <Route path="/players" element={<Players season={season}/>}/>
@@ -30,6 +31,7 @@ function App() {
             <Route path="/champions/:id" element={<Champion season={season}/>}/>
             <Route path="/leaderboards" element={<Leaderboards season={season}/>}/>
             <Route path="/records" element={<Records season={season}/>}/>
+            <Route path="/lobby" element={<Lobby/>}/>
           </Routes>
         </div>
       </BrowserRouter>

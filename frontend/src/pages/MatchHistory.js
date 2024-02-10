@@ -7,10 +7,14 @@ import './MatchHistory.css'
 const MatchHistory = ({season}) => 
 {
   const [matches, setMatches] = useState([]);
+  const [isDetailed, setIsDetailed] = useState('');
 
   useEffect(() => {
     const fetchMatches = async () =>
     {
+      const queryParams = new URLSearchParams(window.location.search);
+      setIsDetailed(queryParams.get('id'));
+
       const response = await fetch(`/api/matches?season=${season}`);
       const json = await response.json();
 
@@ -18,6 +22,16 @@ const MatchHistory = ({season}) =>
       {
         setMatches(json);
       }
+
+      setTimeout(() => {
+        const target = document.getElementById(queryParams.get('id'));
+
+        if(target)
+        {
+          console.log('abc');
+          target.scrollIntoView({behavior: 'smooth'});
+        }
+      }, 500)
     }
 
     fetchMatches();
@@ -27,7 +41,7 @@ const MatchHistory = ({season}) =>
     <div className="matchHistory">
       {matches && matches.map((match) => {
         return (
-          <Match match={match}></Match>
+          <Match match={match} isDetailed={isDetailed === match.gameId}></Match>
         );
       })}
     </div>

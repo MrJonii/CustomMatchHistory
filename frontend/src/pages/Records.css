@@ -1,0 +1,54 @@
+.records {
+    display: flex;
+    flex-direction: column;
+    margin-left: 250px;
+    justify-content: center;
+    align-items: center;
+}
+
+.record-container {
+    display: flex;
+    flex-direction: column;
+    background-color: #555555;
+    margin: 10px;
+    padding: 5px;
+    border: 2px solid #202020;
+    border-radius: 10px;
+}
+
+.record-container p {
+    text-align: center;
+    font-size: 22px;
+}
+
+.record-container-inner {
+    display: flex;
+}
+
+.record-entry {
+    display: flex;
+    flex-direction: row;
+    text-decoration: none;
+    background-color: red;
+    width: 300px;
+    margin: 10px;
+    background-color: #666666;
+    border: 2px solid #202020;
+    border-radius: 10px;
+}
+
+.record-entry:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
+
+.record-entry-block {
+    margin: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.record-entry-block p {
+    text-align: center;
+    font-size: 16px;
+}

@@ -9,26 +9,30 @@ const aliases = {
 
 const getMatches = async (request, response) =>
 {
-  const season = request.query.season;
-  const matches = await Match.find({season: season}).sort({createdAt: -1});
-
-  for(const m in matches){
-    const match = matches[m];
-
-    for(const t in match.teams){
-      const team = match.teams[t];
-
-      for(const p in team.players){
-        const player = team.players[p];
-        
-        if(aliases.hasOwnProperty(player.riotId)){
-          player.summonerName = aliases[player.riotId];
+  try{
+    const season = request.query.season;
+    const matches = season ? await Match.find({season: season}).sort({createdAt: -1}) : await Match.find().sort({createdAt: -1});
+  
+    for(const m in matches){
+      const match = matches[m];
+  
+      for(const t in match.teams){
+        const team = match.teams[t];
+  
+        for(const p in team.players){
+          const player = team.players[p];
+          
+          if(aliases.hasOwnProperty(player.riotId)){
+            player.summonerName = aliases[player.riotId];
+          }
         }
       }
     }
+  
+    response.status(200).json(matches);
+  }catch(error){
+    response.status(400).json({error: error});
   }
-
-  response.status(200).json(matches);
 };
 
 const getMatch = async (request, response) =>

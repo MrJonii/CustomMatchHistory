@@ -10,6 +10,7 @@ let images = {}
 
 images.champions = importAll(require.context('../public/resources/champions', false, /\.(png|jpe?g|svg)$/));
 images.roles = importAll(require.context('../public/resources/roles', false, /\.(png|jpe?g|svg)$/));
+images.lobby = importAll(require.context('../public/resources/lobby', false, /\.(png|jpe?g|svg)$/))
 
 const colors = {
   red: '#E76161',

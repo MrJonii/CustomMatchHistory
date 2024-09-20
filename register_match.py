@@ -50,8 +50,6 @@ url = f'https://jonii.org/api/matches'
 response = requests.post(url, headers = {'Authorization': f'{backend_username}:{backend_password}'}, json = j)
 j = response.json()
 
-exit()
-
 url = f'https://jonii.org/api/matches/{j["_id"]}'
 response = requests.get(url, headers = {'Authorization': f'{backend_username}:{backend_password}'})
 

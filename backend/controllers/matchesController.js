@@ -65,7 +65,7 @@ const addMatch = async (request, response) =>
     {
       console.log(`Expected: ${process.env.USER} Actual: ${username}`);
       console.log(`Expected: ${process.env.PASSWORD} Actual: ${password}`);
-      
+
       return response.status(401).json({error: 'Unauthorized'});
     }
 
@@ -141,7 +141,7 @@ const addMatch = async (request, response) =>
     }
 
     const match = await Match.create({
-      season: 3,
+      season: 4,
       gameId: request.body.gameId,
       duration: request.body.gameDuration, 
       win: winningTeam,

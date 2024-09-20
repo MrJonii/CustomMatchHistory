@@ -14,7 +14,7 @@ import Lobby from './pages/Lobby'
 import Sidebar from './components/Sidebar'
 
 function App() {
-  const [season, setSeason] = useState(3);
+  const [season, setSeason] = useState(4);
 
   return (
     <div className="App">

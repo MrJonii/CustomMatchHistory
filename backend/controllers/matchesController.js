@@ -63,7 +63,10 @@ const addMatch = async (request, response) =>
 
     if (username != process.env.USER || password != process.env.PASSWORD)
     {
-       return response.status(401).json({error: 'Unauthorized'});
+      console.log(`Expected: ${process.env.USER} Actual: ${username}`);
+      console.log(`Expected: ${process.env.PASSWORD} Actual: ${password}`);
+      
+      return response.status(401).json({error: 'Unauthorized'});
     }
 
     let winningTeam = ''

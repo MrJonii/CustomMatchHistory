@@ -34,7 +34,9 @@ print(response.status_code)
 
 j = response.json()
 
-j['season'] = 3
+j['season'] = 4
+j['teams'][0]['bans'] = []
+j['teams'][1]['bans'] = []
 
 for i in range(10):
     team = 0 if i < 5 else 1
@@ -43,12 +45,14 @@ for i in range(10):
 with open('match.json', 'w') as file:
     file.write(json.dumps(j, indent = 4))
 
-url = f'http://127.0.0.1:42069/api/matches'
+url = f'https://jonii.org/api/matches'
 
 response = requests.post(url, headers = {'Authorization': f'{backend_username}:{backend_password}'}, json = j)
 j = response.json()
 
-url = f'http://127.0.0.1:42069/api/matches/{j["_id"]}'
+exit()
+
+url = f'https://jonii.org/api/matches/{j["_id"]}'
 response = requests.get(url, headers = {'Authorization': f'{backend_username}:{backend_password}'})
 
 m = response.json()

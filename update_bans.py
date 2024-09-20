@@ -17,10 +17,10 @@ with open('backend/.env') as file:
         if split[0] == 'PASSWORD':
             backend_password = split[1].strip()
 
-url = f'http://127.0.0.1:42069/api/matches'
-urlS3 = f'http://127.0.0.1:42069/api/matches?season=3'
+url = f'https://jonii.org/api/matches'
+urlS4 = f'https://jonii.org/api/matches?season=4'
 
-response = requests.get(urlS3)
+response = requests.get(urlS4)
 j = response.json()
 
 # for match in j:

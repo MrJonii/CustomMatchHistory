@@ -12,7 +12,7 @@ const Sidebar = ({ setSeason }) => {
   useEffect(() => {
     const fetchMatches = async () =>
     {
-      const response = await fetch(`/api/matches?season=3`);
+      const response = await fetch(`/api/matches`);
       const json = await response.json();
 
       if(!response.ok)
@@ -107,7 +107,8 @@ const Sidebar = ({ setSeason }) => {
             <div style={{ margin: '16px 0px', display: 'flex', justifyContent: 'center'}}>
               <select className='dropdown season-dropdown' onChange={handleSeasonChange}>
                 <option value='2'>Season 2</option>
-                <option value='3' selected={true}>Season 3</option>
+                <option value='3'>Season 3</option>
+                <option value='4' selected={true}>Season 4</option>
               </select>
             </div>
           </li>
